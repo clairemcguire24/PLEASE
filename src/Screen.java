@@ -17,11 +17,11 @@ public class Screen extends JPanel {
 
 
     Ball ball = new Ball(x, y, 5);
-    Ball oval = new Ball(250,200,100,8);
+    Ball oval = new Ball(250,400,100,8);
 
     public Screen() {
 
-        setBackground(Color.BLUE);
+        setBackground(Color.BLACK);
 
         setFocusable(true);
 
@@ -71,8 +71,11 @@ public class Screen extends JPanel {
 
         //g.fillOval(30,100,150,8);
 
-      if(oval.
-
+      if(((ball.getX()>oval.getX())&&(ball.getX()<oval.getX()+oval.getLength()))&&
+              ((ball.getY()+ball.getSize()>oval.getY())&&(ball.getY()+ball.getSize()<oval.getY()+oval.getHeight())))
+      {
+          ball.setXSpeed(ball.getXSpeed() * -1);
+      }
         try {
             Thread.sleep(10);
         }
