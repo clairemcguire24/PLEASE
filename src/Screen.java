@@ -21,7 +21,7 @@ public class Screen extends JPanel {
 
     public Screen() {
 
-        setBackground(Color.BLACK);
+        setBackground(Color.BLUE);
 
         setFocusable(true);
 
@@ -62,8 +62,16 @@ public class Screen extends JPanel {
         ball.drawBall(g);
         ball.moveBall(this);
         oval.drawOval(g);
+//check if x of ball is greater than x of oval and less than x of oval+width
+      /*if()
+      {
+        ball.setXSpeed((ball.getXSpeed())*-1);
+      }
+      */
 
         //g.fillOval(30,100,150,8);
+
+      if(oval.
 
         try {
             Thread.sleep(10);

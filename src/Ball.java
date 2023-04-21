@@ -29,7 +29,13 @@ public class Ball{
         ySpeed = 10;
         c = Color.WHITE;
     }
+public int getLength(){
+  return length;
+}
 
+public int getHeight(){
+  return height;
+}
 
     public void setX(int x){
         this.x=x;
@@ -37,7 +43,12 @@ public class Ball{
     public void setY(int y){
         this.y=y;
     }
-
+  public void setXSpeed(int xSpeed){
+    this.xSpeed = xSpeed;
+  }
+public int getXSpeed(){
+  return xSpeed;
+}
     public int getX (){
         return x;
     }
@@ -71,8 +82,6 @@ public class Ball{
             xSpeed = 0;
             ySpeed = 0;
         }
-
-
 
     }
 
