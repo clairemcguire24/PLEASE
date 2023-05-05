@@ -14,6 +14,7 @@ public class Screen extends JPanel {
     // private int xSpeed = 3;
     private int y = 20;
     //private int ySpeed = 3;
+    private ArrayList<Box> grid;
 
 
     Ball ball = new Ball(x, y, 5);
@@ -74,7 +75,8 @@ public class Screen extends JPanel {
       if(((ball.getX()>oval.getX())&&(ball.getX()<oval.getX()+oval.getLength()))&&
               ((ball.getY()+ball.getSize()>oval.getY())&&(ball.getY()+ball.getSize()<oval.getY()+oval.getHeight())))
       {
-          ball.setXSpeed(ball.getXSpeed() * -1);
+          ball.setYSpeed(ball.getYSpeed() * -1);
+          System.out.println("hit");
       }
         try {
             Thread.sleep(10);

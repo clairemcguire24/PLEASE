@@ -43,6 +43,13 @@ public int getHeight(){
     public void setY(int y){
         this.y=y;
     }
+    public void setYSpeed(int ySpeed){
+        this.ySpeed = ySpeed;
+    }
+
+    public int getYSpeed(){
+        return ySpeed;
+    }
   public void setXSpeed(int xSpeed){
     this.xSpeed = xSpeed;
   }
