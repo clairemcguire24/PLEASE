@@ -14,17 +14,30 @@ public class Screen extends JPanel {
     // private int xSpeed = 3;
     private int y = 20;
     //private int ySpeed = 3;
-    private ArrayList<Box> grid;
+    private Box[][] grid ;
 
 
     Ball ball = new Ball(x, y, 5);
     Ball oval = new Ball(250,400,100,8);
+    Box square = new Box(2,2,2,2);
+    private int x1 = 2;
 
     public Screen() {
 
         setBackground(Color.BLACK);
+        grid = new Box[4][5];
+
+        for (int r=0; r<grid.length;r++){
+            for (int c=0; c<grid[0].length;c++){
+                grid[r][c] = new Box(x1,2,2,2);
+                x1+=2;
+            }
+        }
+
+
 
         setFocusable(true);
+
 
         addKeyListener(new KeyListener() {
             @Override
@@ -78,6 +91,15 @@ public class Screen extends JPanel {
           ball.setYSpeed(ball.getYSpeed() * -1);
           System.out.println("hit");
       }
+
+        for (int r=0; r<grid.length;r++){
+            for (int c=0; c<grid[0].length;c++){
+                grid[r][c].drawBox(g);
+            }
+        }
+
+
+
         try {
             Thread.sleep(10);
         }
