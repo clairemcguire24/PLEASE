@@ -12,7 +12,7 @@ import java.awt.MouseInfo.*;
 public class Screen extends JPanel {
     private int x = 80;
     // private int xSpeed = 3;
-    private int y = 20;
+    private int y = 100;
     //private int ySpeed = 3;
     private Box[][] grid ;
 
@@ -25,12 +25,12 @@ public class Screen extends JPanel {
     public Screen() {
 
         setBackground(Color.BLACK);
-        grid = new Box[4][5];
+        grid = new Box[3][20];
 
         for (int r=0; r<grid.length;r++){
             for (int c=0; c<grid[0].length;c++){
-                grid[r][c] = new Box(x1,2,2,2);
-                x1+=2;
+                grid[r][c] = new Box(x1,20,40,20);
+                x1+=grid[r][c].getWidth();
             }
         }
 
@@ -92,9 +92,22 @@ public class Screen extends JPanel {
           System.out.println("hit");
       }
 
-        for (int r=0; r<grid.length;r++){
+        //for (int r=0; r<grid.length;r++){
             for (int c=0; c<grid[0].length;c++){
-                grid[r][c].drawBox(g);
+                if ( grid[0][c] != null ) {
+                    grid[0][c].drawBox(g);
+                }
+            }
+
+
+        if(ball.getY()<=40){
+            ball.setYSpeed(ball.getYSpeed()*-1);
+
+            for (int c=0; c<grid[0].length;c++){
+               if(grid[0][c]!=null)
+                if((ball.getX()>grid[0][c].getX())&&(ball.getX()<grid[0][c].getX()+grid[0][c].getWidth())){
+                    grid[0][c]=null;
+                }
             }
         }
 

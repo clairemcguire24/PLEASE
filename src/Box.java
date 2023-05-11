@@ -19,6 +19,7 @@ public class Box {
     public void drawBox(Graphics olivia){
         olivia.setColor(c);
         olivia.fillRect(x,y,width,height);
+
     }
 
     public int getX(){
